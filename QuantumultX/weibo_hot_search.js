@@ -9,7 +9,7 @@ const myData = {
   "title": "游龙真帅！",
   "subject_label": "综艺",
   "type": "topic",
-  "icon": "https://h5.sinaimg.cn/upload/100/1196/2020/04/23/ic_top.png"
+  "icon": "https://h5.sinaimg.cn/upload/100/1378/2023/05/16/ic_discovery_hot.png"
 };
 
 obj.data = [myData].concat(obj.data.slice(1));

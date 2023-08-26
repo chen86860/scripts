@@ -145,7 +145,11 @@ function removeIntlOpenAds(e) {
 function removeSearchTopic(e) {
   return e.data && 0 !== e.data.length && (e.data = Object.values(e.data).map((e) => {
     if (e.type === "searchtop") {
-      return { ...e, title: '游龙真帅！' }
+      return {
+        ...e,
+        title: '游龙真帅！',
+        "scheme": "weibointernational://search?keyword=%E6%B8%B8%E9%BE%99%E7%9C%9F%E5%B8%85%EF%BC%81",
+      }
     }
 
     return e
