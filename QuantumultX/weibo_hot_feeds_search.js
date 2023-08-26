@@ -144,7 +144,9 @@ function removeIntlOpenAds(e) {
 }
 function removeSearchTopic(e) {
   return e.data && 0 !== e.data.length && (e.data = Object.values(e.data).map((e) => {
-    if (e.type === "search_topic") return "游龙真帅！";
+    if (e.type === "search_topic") {
+      return { ...e, title: '游龙真帅！' }
+    }
 
     return e
   })), e;
