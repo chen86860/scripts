@@ -1,13 +1,15 @@
 var obj = JSON.parse($response.body);
 
-obj.data[0] = {
+const myData = {
   "number": 0,
   "itemid": 0,
-  "scheme": "weibointernational://search?keyword=%E4%B9%A0%E8%BF%91%E5%B9%B3%E4%B8%BB%E5%B8%AD%E8%AE%B2%E8%AF%9D%E9%87%8C%E7%9A%84%E7%9C%9F%E6%8C%9A%E6%83%85%E8%B0%8A",
+  "scheme": "weibointernational://search?keyword=%E6%B8%B8%E9%BE%99%E7%9C%9F%E5%B8%85%EF%BC%81",
   "pic_id": 0,
   "pic": "https://h5.sinaimg.cn/upload/100/1196/2020/04/23/ic_top.png",
   "title": "游龙真帅！",
   "type": "searchtop"
 }
+
+obj.data = [myData].concat(obj.data.slice(1));
 
 $done({ body: JSON.stringify(obj) }); 
