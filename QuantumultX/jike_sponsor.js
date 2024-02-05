@@ -8,7 +8,7 @@ const newBody = {
     bio: originBody.user.bio + ' ;)',
     briefIntro: originBody.user.bio + ' ;)',
     isSponsor: true,
-    sponsorExpiresAt: new Date('2026-01-06').toISOString(),
+    sponsorExpiresAt: new Date('2026-12-25').toISOString(),
     sponsorIcon: {
       type: 'COLORFUL',
       picture: {
