@@ -1,8 +1,14 @@
 const originBody = $response.body;
 
+const url = $request.url;
+console.log('🚀 ~ url:', url);
+
 console.log('🚀 ~ response:', JSON.stringify($response));
 console.log('🚀 ~ response:', String($response));
 console.log('🚀 ~ originBody:', JSON.stringify(originBody));
+
+let obj = JSON.parse($response.body);
+console.log('🚀 ~ obj:', obj);
 
 // const newBody = {
 //   ...originBody,
