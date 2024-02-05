@@ -7,7 +7,8 @@ const newBody = {
     isBanned: false,
     bio: originBody.user.bio + ' ;)',
     briefIntro: originBody.user.bio + ' ;)',
-    isSponsor: false,
+    isSponsor: true,
+    sponsorExpiresAt: new Date('2026-01-06').toISOString(),
     sponsorIcon: {
       type: 'COLORFUL',
       picture: {
@@ -30,10 +31,12 @@ const newBody = {
     debugLogOn: false,
     enablePictureWatermark: false,
   },
-  sponsorExpiresAt: new Date('2026-01-06').toISOString(),
+
   isVerified: true,
-  isBetaUser: true,
+  isBetaUser: false,
   showRespect: true,
 };
 
-$done({ body: JSON.stringify(originBody) });
+$done({
+  body: JSON.stringify(newBody),
+});
