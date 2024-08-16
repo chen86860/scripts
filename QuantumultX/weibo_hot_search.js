@@ -12,6 +12,19 @@ const myData = {
   icon: 'https://h5.sinaimg.cn/upload/100/1378/2023/05/16/ic_discovery_hot.png',
 };
 
-originBody.data = [myData].concat(originBody.data.slice(1));
+if (originBody.data && originBody.data.search_topic) {
+  originBody.data = {
+    search_topic: {
+      ...originBody.data.search_topic,
+      cards: [myData].concat(originBody.data.search_topic.cards.slice(1)),
+    },
+    trending_topic: {
+      ...originBody.data.trending_topic,
+      cards: [],
+    },
+  };
+} else {
+  originBody.data = [myData].concat(originBody.data.slice(1));
+}
 
 $done({ body: JSON.stringify(originBody) });
