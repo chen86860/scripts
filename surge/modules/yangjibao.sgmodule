@@ -7,9 +7,9 @@
 ^https?:\/\/app-api\.yangjibao\.com\/unify_ad - reject
 ^https?:\/\/app-api\.yangjibao\.com\/content\/v1\/ad\/config - reject
 
-[Script]
+[Body Rewrite]
 
-yangjibao_account = type=http-response, pattern=^https?:\/\/app-api\.yangjibao\.com\/users\/v1\/account(\?.*)?$, requires-body=true, max-size=-1, timeout=10, script-path=https://raw.githubusercontent.com/chen86860/scripts/main/surge/scripts/yangjibao.js
+http-response-jq ^https?:\/\/app-api\.yangjibao\.com\/users\/v1\/account(\?.*)?$ '.data.subscribe_status = 1 | .data.vip_label = true | .data.has_stock_hold = true | .data.has_stock_option = true | .data.is_pay = true | .data.open_free_vip_sign = true | .data.show_bkxh = true | .data.vip_expiry_date = "2029-12-31"'
 
 [MITM]
 
